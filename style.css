@@ -1,0 +1,173 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7efe2;
+  color: #1f1a17;
+}
+.app {
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+.hero {
+  background: #2c1810;
+  color: #fff8ed;
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-weight: 700;
+  color: #f0c36a;
+  margin: 0 0 8px;
+}
+h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 4rem); }
+h2 { margin-top: 0; }
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+label { font-weight: 700; }
+select, button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 15px;
+}
+select { min-width: 240px; background: #fff; }
+button {
+  background: #d8a13b;
+  color: #1f1a17;
+  cursor: pointer;
+}
+button:hover { filter: brightness(.95); }
+.theme-description {
+  max-width: 780px;
+  margin: 16px 0 0;
+  color: #f6e2bd;
+}
+.layout {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.crossword {
+  display: grid;
+  gap: 2px;
+  overflow-x: auto;
+  background: #33251f;
+  border: 8px solid #33251f;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 12px;
+}
+.cell {
+  width: 34px;
+  height: 34px;
+  background: white;
+  position: relative;
+}
+.cell.block { background: #33251f; }
+.number {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  z-index: 2;
+}
+input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: transparent;
+  padding-top: 7px;
+}
+input:focus { outline: 3px solid #d8a13b; outline-offset: -3px; }
+.answer {
+  display: none;
+  position: absolute;
+  inset: 0;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 800;
+  padding-top: 7px;
+  background: #fff5d8;
+}
+.show-answers input { display: none; }
+.show-answers .answer { display: grid; }
+.panel {
+  background: #fffaf1;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+ol { padding-left: 24px; }
+li { margin: 8px 0; line-height: 1.35; }
+.answer-word { color: #8d5c13; font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .cell { width: 30px; height: 30px; }
+  .crossword { border-width: 6px; }
+}
+.ai-box {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 250, 241, .12);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.ai-box h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+.ai-box p {
+  margin: 0 0 14px;
+  color: #f6e2bd;
+}
+.ai-controls {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.ai-controls input {
+  width: auto;
+  min-width: 230px;
+  height: auto;
+  border-radius: 999px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+  background: white;
+  color: #1f1a17;
+  text-transform: none;
+}
+.ai-controls input:focus {
+  outline: 3px solid #d8a13b;
+  outline-offset: 2px;
+}
+.ai-status {
+  min-height: 22px;
+  font-weight: 700;
+}
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}

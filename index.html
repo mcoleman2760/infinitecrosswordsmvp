@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black History Crossword Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Black History Edition</p>
+      <h1>Random Crossword Generator</h1>
+      <p>Choose a built-in theme, or use AI to generate a fresh Black History word bank with definitions.</p>
+      <div class="controls">
+        <label for="puzzleSelect">Puzzle theme</label>
+        <select id="puzzleSelect"></select>
+        <button id="generateBtn">Generate Puzzle</button>
+        <button id="randomThemeBtn">Random Theme</button>
+        <button id="revealBtn">Reveal Answers</button>
+        <button id="hideBtn">Hide Answers</button>
+      </div>
+      <p id="themeDescription" class="theme-description"></p>
+
+      <div class="ai-box">
+        <h2>AI Word Bank Generator</h2>
+        
+        <div class="ai-controls">
+          <input id="aiTopic" type="text" value="Black History Month" placeholder="Topic, for example Harlem Renaissance" />
+          <select id="difficulty">
+            <option value="middle school">Middle school</option>
+            <option value="high school" selected>High school</option>
+            <option value="college intro">College intro</option>
+          </select>
+          <button id="aiGenerateBtn">Generate With AI</button>
+        </div>
+        <p id="aiStatus" class="ai-status"></p>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div>
+        <h2 id="puzzleTitle">Puzzle</h2>
+        <div id="crossword" class="crossword" aria-label="Crossword puzzle grid"></div>
+      </div>
+
+      <aside class="panel">
+        <h2>Clues</h2>
+        <h3>Across</h3>
+        <ol id="acrossClues"></ol>
+        <h3>Down</h3>
+        <ol id="downClues"></ol>
+      </aside>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
